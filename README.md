@@ -1,4 +1,4 @@
 #### PCA
 ===
 
-Implementation of Principle Component analysis written in C++, uses C++11 and vectors. -- This is a side project so don't expect much!
+Implementation for the Principle Component Analysis, which, implemented from (http://www.cs.otago.ac.nz/cosc453/student_tutorials/principal_components.pdf) and (http://www.math.union.edu/~jaureguj/PCA.pdf)
