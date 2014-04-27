@@ -6,11 +6,13 @@ Implementation for the Principle Component Analysis, which, implemented using th
 ### Installing Compiling examples 
 ===
 
-#### To install 
+#### To install (Linux)
 ```bash
 git clone https://github.com/Phorce/pca.git
-cd pca 
+
+cd ~/Dir/pca 
 Make
+
 ```
 
 
