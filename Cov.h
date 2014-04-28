@@ -20,10 +20,11 @@ class Cov {
 			for(auto& vect : data)
 			    sub_elements(vect, mean_product); 
 			
-
 			// Multiplies the outer product
 			this->output = outer_product();
 		}
+
+
 
 		std::vector<Vector> transform(); 
 		
@@ -39,6 +40,4 @@ class Cov {
 
 		std::vector<Vector> data; 
 		std::vector<Vector> output;
-
-
 };

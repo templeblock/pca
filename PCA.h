@@ -14,15 +14,24 @@ class PCA {
 		PCA(T begin, T end) 
 			: data(begin, end)
 		{
-			 this->pca_helper(); 
+			c = new Cov(begin, end); 
+
+			eig2();
 		}
+
+		std::vector<Vector> cov(); 
+
+		void eig2();
 
 		void pca_helper(); 	
 
 	private:
 		Cov* c; 
-		std::vector<Vector> cov_matrix; 
 		std::vector<Vector> data; 
 
+		struct Eigen {
+			float lamda1;
+			float lamda2; 
+		};
 
 }; 

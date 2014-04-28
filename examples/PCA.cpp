@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
-#include "src/PCA.h"
+#include "../PCA.h"
 
 
 int main()
 {
 
-	std::vector<std::vector<double> > data = { {1, 2}, {3, 4} };
+	std::vector<std::vector<double> > data = { {-2, -1}, {1, 2} };
 
 	PCA pca(std::begin(data), std::end(data));
 
