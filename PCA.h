@@ -4,6 +4,10 @@
 
 typedef std::vector<double> Vector; 
 
+struct Eigen {
+	float lambda1;
+	float lambda2; 
+};
 class PCA {
 
 	public: 
@@ -25,13 +29,13 @@ class PCA {
 
 		void pca_helper(); 	
 
+		Eigen eignvalues();
+
+		std::vector<Vector> generate(std::size_t x, std::size_t y); 
+
 	private:
 		Cov* c; 
 		std::vector<Vector> data; 
-
-		struct Eigen {
-			float lamda1;
-			float lamda2; 
-		};
+		Eigen values;
 
 }; 
