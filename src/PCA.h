@@ -19,7 +19,6 @@ class PCA {
 			: data(begin, end)
 		{
 			c = new Cov(begin, end); 
-
 			eig2();
 		}
 
@@ -31,7 +30,7 @@ class PCA {
 
 		Eigen eignvalues();
 
-		std::vector<Vector> generate(std::size_t x, std::size_t y); 
+	
 
 	private:
 		Cov* c; 
