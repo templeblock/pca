@@ -17,14 +17,14 @@ namespace Helper {
 
     template<typename T>
     std::deque<std::size_t> dimensions(std::vector<T> const& v)
-    {
-        if(v.empty())
-    return {0};  
-        else {
-           auto dims = dimensions(v.front()); 
-     dims.push_front(v.size());
-     return dims;   
-     }
+    {	
+	if(v.empty())
+	  return {0}; 
+	else {
+	 auto dims = dimensions(v.front()); 
+	 dims.push_back(v.size());
+	 return dims; 
+	}
      }
 
 }
@@ -38,7 +38,6 @@ std::vector<Vector> Eigen::solveEigen(std::vector<Vector> data)
 
     if(dims[0] == 2)
        Eigen::eig2(data);
-
 
     return eigen_values; 
 }
@@ -62,9 +61,18 @@ std::vector<Vector> Eigen::eig2(std::vector<Vector> data) {
     eigen_values.push_back( (a+c+sqrt(determinant))/2 );
     eigen_values.push_back( (a+c-sqrt(determinant))/2 ); 
 
-    std::cout << eigen_values[0];
-    std::cout << eigen_values[1];
+    // calculate the Eigen vectors 
+    Vector eigen_vectors; 
 
+    float lambda1 = (1*1) + (eigen_values[0] - a)/b * (eigen_values[0] - a)/b;
+    float lambda2 = -((eigen_values[0] - a)/b) / sqrt(lambda1);
+
+    eigen_vectors.push_back(1 / sqrt(lambda1));
+    eigen_vectors.push_back(lambda2); 
+
+    eigen_properties.push_back(eigen_values);
+    eigen_properties.push_back(eigen_vectors); 
+    
     return eigen_properties;
 
 }
