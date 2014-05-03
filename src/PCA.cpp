@@ -4,7 +4,6 @@
 #include "PCA.h"
 #include <deque> 
 #include <cassert>
-#include "Determinant.cpp"
 using namespace std; 
 
 PCA::PCA() {
@@ -16,9 +15,10 @@ std::vector<Vector> PCA::getEigen()
    return values;
 }
 
-void PCA::solveEigen()
-{
-   
+void PCA::Solve() {
+
+    values = Eigen::solveEigen(this->cov());
+
 }
 
 //void PCA::eig2() {

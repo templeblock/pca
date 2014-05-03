@@ -1,13 +1,9 @@
 #include <iostream>
 #include <vector>
 #include "Cov.h"
-
+#include "Eigen.h"
 typedef std::vector<double> Vector; 
 
-struct Eigen {
-	float lambda1;
-	float lambda2; 
-};
 class PCA {
 
 	public: 
@@ -18,16 +14,15 @@ class PCA {
 	   PCA(T begin, T end) 
 	   : data(begin, end)
 	   {
-		c = Cov(begin, end); 
-		
+			c = Cov(begin, end); 
+			Solve();
 	   }
 
 	   std::vector<Vector> cov(); 
 		
 	   std::vector<Vector> getEigen(); 
+	   void Solve();
 
-	   void solveEigen(); 
-		
 	private:
 	  Cov c; 
 	  std::vector<Vector> data; 
