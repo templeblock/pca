@@ -12,29 +12,25 @@ class PCA {
 
 	public: 
 
-		PCA(); 
+	   PCA(); 
 
-		template<typename T>
-		PCA(T begin, T end) 
-			: data(begin, end)
-		{
-			c = new Cov(begin, end); 
-			eig2();
-		}
+	   template<typename T>
+	   PCA(T begin, T end) 
+	   : data(begin, end)
+	   {
+		c = Cov(begin, end); 
+		
+	   }
 
-		std::vector<Vector> cov(); 
+	   std::vector<Vector> cov(); 
+		
+	   std::vector<Vector> getEigen(); 
 
-		void eig2();
-
-		void pca_helper(); 	
-
-		Eigen eignvalues();
-
-	
-
+	   void solveEigen(); 
+		
 	private:
-		Cov* c; 
-		std::vector<Vector> data; 
-		Eigen values;
+	  Cov c; 
+	  std::vector<Vector> data; 
+	  std::vector<Vector> values; 
 
 }; 

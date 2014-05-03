@@ -7,21 +7,63 @@
 #include "Determinant.cpp"
 using namespace std; 
 
+namespace Helper {
+	
+   template<typename V>
+   std::deque<std::size_t> dimensions(V const& vect)
+   {
+       return {}; 
+   }
+   
+   template<typename T>
+   std::deque<std::size_t> dimensions(std::vector<T> const& v)
+   {
+       if(v.empty())
+        return {0};  
+       else {
+         auto dims = dimensions(v.front()); 
+         dims.push_front(v.size()); 
+         return dims;   
+             
+       }
+   }
+}
+
 PCA::PCA() {
 
 } 
 
-std::vector<Vector> PCA::getEigen()
+Eigen PCA::eignvalues()
 {
-   return values;
+	return this->values;
 }
+void PCA::solveEig() {
+	
+    /* 
+	PCA - SolveEig 
+        This method is a generate and dedcudes the type 
+        the dimensions of the cov matrix 
+   	
+	ASSUMTIONS:
+	
+	   *Cov matrix is given in the class "PCA"
+	    if this method is not accessed through PCA,
+	    use solveEig(vect); 
+     */
 
-void PCA::solveEigen()
-{
-   
+     // Get the Cov matrix 
+     auto cov_matrix = this->cov(); 
+     // Deduce the dimensionality 
+     //auto dims = Helper::dimensions(cov_matrix); 
+     	
+    // if(dims[0] == 2) {
+      // this->eig2(); 
+     //}else if(dims[0] == 3) {
+       // need to do this 
+       // oops 
+     //PCA}
 }
-
-//void PCA::eig2() {
+void PCA::eig2() {
 
     // get the dimensions of the data
 
@@ -81,8 +123,8 @@ void PCA::solveEigen()
     
     // std::cout << "VECTOR: " <<  1 * (values.lambda1 - a) / 3;
     */ 
-//}
+}
 std::vector<Vector> PCA::cov() {
 
-	return c.transform();
+	return c->transform();
 } 
