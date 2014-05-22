@@ -37,7 +37,7 @@ std::vector<Vector> Eigen::solveEigen(std::vector<Vector> data)
     auto dims = Helper::dimensions(data); 
 
     if(dims[0] == 2)
-       Eigen::eig2(data);
+       eigen_values = Eigen::eig2(data);
 
     return eigen_values; 
 }
@@ -60,7 +60,7 @@ std::vector<Vector> Eigen::eig2(std::vector<Vector> data) {
 
     eigen_values.push_back( (a+c+sqrt(determinant))/2 );
     eigen_values.push_back( (a+c-sqrt(determinant))/2 ); 
-
+    
     // calculate the Eigen vectors 
     Vector eigen_vectors; 
 
@@ -69,7 +69,11 @@ std::vector<Vector> Eigen::eig2(std::vector<Vector> data) {
 
     eigen_vectors.push_back(1 / sqrt(lambda1));
     eigen_vectors.push_back(lambda2); 
-
+    
+    for(std::size_t i=0; (i < eigen_vectors.size()); i++)
+    {
+	std::cout << eigen_vectors[i] << std::endl;
+    }
     eigen_properties.push_back(eigen_values);
     eigen_properties.push_back(eigen_vectors); 
     
