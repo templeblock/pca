@@ -70,13 +70,9 @@ std::vector<Vector> Eigen::eig2(std::vector<Vector> data) {
     eigen_vectors.push_back(1 / sqrt(lambda1));
     eigen_vectors.push_back(lambda2); 
     
-    for(std::size_t i=0; (i < eigen_vectors.size()); i++)
-    {
-	std::cout << eigen_vectors[i] << std::endl;
-    }
     eigen_properties.push_back(eigen_values);
     eigen_properties.push_back(eigen_vectors); 
-    
+
     return eigen_properties;
 
 }
