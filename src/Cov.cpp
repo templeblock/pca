@@ -57,9 +57,10 @@ std::vector<Vector> Cov::outer_product() {
 		{
 			outer[j][j] += data[i][j] * data[i][j];
 			for(std::size_t k = j+1; (k < N); k++) {
+				//std::cout << "Data.." << data[i][j] << "*" << data[i][k] << std::endl;
 				double temp = data[i][j] * data[i][k];
 				outer[j][k] += temp;
-				outer[k][j] += temp;
+				outer[k][j] += temp;				
 			}
 		}
 	}

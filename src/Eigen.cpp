@@ -18,13 +18,13 @@ namespace Helper {
     template<typename T>
     std::deque<std::size_t> dimensions(std::vector<T> const& v)
     {	
-	if(v.empty())
-	  return {0}; 
-	else {
-	 auto dims = dimensions(v.front()); 
-	 dims.push_back(v.size());
-	 return dims; 
-	}
+	   if(v.empty())
+	     return {0}; 
+       else {
+	       auto dims = dimensions(v.front()); 
+	       dims.push_back(v.size());
+	       return dims; 
+	   }
      }
 
 }

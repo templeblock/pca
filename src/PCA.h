@@ -14,8 +14,8 @@ class PCA {
 	   PCA(T begin, T end) 
 	   : data(begin, end)
 	   {
-		c = Cov(begin, end); 
-		Solve();
+			c = Cov(begin, end); 
+			Solve();
 	   }
 
 	   std::vector<Vector> cov(); 
