@@ -20,4 +20,8 @@ Please note, C++11 is required in order to run the examples. These invoke standa
 ``` 
 g++ example/PCA.cpp -std=c++11 PCA.so
 g++ examplees/Cov.cpp -std=c++11 PCA.so
-````
+```
+### Example
+===
+
+Given ![equation](http://latex.codecogs.com/gif.latex?\vec{a}&space;\in&space;\Re)
