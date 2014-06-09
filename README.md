@@ -24,4 +24,6 @@ g++ examplees/Cov.cpp -std=c++11 PCA.so
 ### Example
 ===
 
-Given ![equation](http://latex.codecogs.com/gif.latex?\vec{a}&space;\in&space;\Re)
+Given that: 
+
+[equation](http://latex.codecogs.com/gif.latex?\vec{a}&space;\in&space;\Re)
