@@ -38,8 +38,27 @@ std::vector<Vector> Eigen::solveEigen(std::vector<Vector> data)
 
     if(dims[0] == 2)
        eigen_values = Eigen::eig2(data);
+    
+    if(dims[0] == 3)
+       eigen_values = Eigen::eig3(data); 
 
+    if(dims[0] == 4)
+      //eigen_values = Eigen::eig4(data); 
+
+    //eigen_values = Eigen::eig2(data); 
+   		    
+    //std::cout << eigen_values.size(); 	
+    //std::cout << dims[0] << std::endl << dims[1] << std::endl;
+    
     return eigen_values; 
+}
+std::vector<Vector> Eigen::eig3(std::vector<Vector> data){
+    
+   float determinant = 0.0; 
+   
+   // Calculate the determinant of the 3x3 matrix
+   determinant = Determinant::determinant<3>(data);
+  
 }
 
 std::vector<Vector> Eigen::eig2(std::vector<Vector> data) {
@@ -65,10 +84,10 @@ std::vector<Vector> Eigen::eig2(std::vector<Vector> data) {
     Vector eigen_vectors; 
 
     float lambda1 = (1*1) + (eigen_values[0] - a)/b * (eigen_values[0] - a)/b;
-    float lambda2 = -((eigen_values[0] - a)/b) / sqrt(lambda1);
+    float lambda2 = ((eigen_values[0] - a)/b) / sqrt(lambda1);
 
     eigen_vectors.push_back(1 / sqrt(lambda1));
-    eigen_vectors.push_back(lambda2); 
+    eigen_vectors.push_back(-lambda2); 
     
     eigen_properties.push_back(eigen_values);
     eigen_properties.push_back(eigen_vectors); 
