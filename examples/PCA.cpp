@@ -9,6 +9,16 @@ void printValue(double val)
     std::cout << val << " ";
 }
 
+void printData(std::vector<std::vector<double> > &data)
+{
+    for(auto& rows : data) {
+	for(auto & cols : rows) {
+	   std::cout << cols << " ";
+	}
+	std::cout << std::endl;
+    }
+}
+
 int main()
 {
     /*
@@ -20,34 +30,31 @@ int main()
 	an example for calculating and determining
 	the Eigenvalues and Eigenvectors of a 3x3 and 4x4
      */ 
-
-    // Firstly, given the 2x2 matrix
-    std::vector<std::vector<double> > data = {
-
-	{4, 6, 10}, 
-	{3, 10, 13},
-	{2, 6, 8}
-
 	
-     };
+    // Given a 2x2 matrix, compute the PCA of this:
+    std::vector<std::vector<double> > input1 = {
+	{1, 2},
+	{3, 4},
+	{5, 6}
+    };
 
-     // Call the PCA mathod. Use iterators, 
-     // avoid passing vector to function 
-     PCA pca(std::begin(data), std::end(data)); 
-     // Return the Eigen values and Eigen vectors of the input
-     // Matrix, ready to perform the PCA analysis of the data. 
-     //std::vector<std::vector<double> > eigens = pca.getEigen();
+    std::cout << "Input Matrix: " << std::endl;
+    printData(input1);
+    std::cout << std::endl; 
 
-     //std::cout << "Eigen Values: " << std::endl;
-    // std::for_each(eigens[0].begin(), eigens[0].end(), printValue); 
-
-     //std::cout << std::endl;
-     
-     //std::cout << "Eigen Vectors" << std::endl;
-    // std::for_each(eigens[1].begin(), eigens[1].end(), printValue); 
-
-    // std::cout << std::endl; 
+    PCA pca(std::begin(input1), std::end(input1)); 
+	
+    std::cout << "Cov Matrix: " << std::endl;
     
-     return 0;
+    std::vector<std::vector<double> > cov_matrix1 = pca.cov();
+    printData(cov_matrix1);
 
+    std::vector<std::vector<double> > eigen_values = pca.getEigen(); 
+    std::cout << "Eigen Values: " << std::endl;
+    std::for_each(eigen_values[0].begin(), eigen_values[0].end(), printValue); 
+    
+    std::cout <<std::endl << "Eigen Vectors: " << std::endl;
+    std::for_each(eigen_values[1].begin(), eigen_values[1].end(), printValue);
+   
+    return 0;
 }

@@ -79,7 +79,7 @@ namespace Helper {
 	   std::vector<double> characteristics(4, 0); 
 	   
 	   // Calculate the first characteristic 
-	   characteristics[0] = 1; 
+	   characteristics[0] = 1;
 	   // Calculate the characteristic for the trace 
 	   characteristics[1] = -(trace(data)); 
 	   // Calculate the 3rd characteristic
@@ -102,7 +102,7 @@ std::vector<Vector> Eigen::solveEigen(std::vector<Vector> data)
        eigen_values = Eigen::eig2(data);
     
     if(dims[0] == 3)
-       eigen_values = Eigen::eig3(data); 
+      eigen_values = Eigen::eig3(data); 
 
     if(dims[0] == 4)
       //eigen_values = Eigen::eig4(data); 
@@ -117,7 +117,6 @@ std::vector<Vector> Eigen::solveEigen(std::vector<Vector> data)
 
 
 std::vector<Vector> Eigen::eig3(std::vector<Vector> data){
-  
    std::vector<Vector> eigen_properties; 
     
    /*
@@ -137,8 +136,8 @@ std::vector<Vector> Eigen::eig3(std::vector<Vector> data){
 
    eigen_values.push_back((fabs(poly_characteristics[1]) + sqrt(cal1 - cal2)) / 2);
    eigen_values.push_back((fabs(poly_characteristics[1]) - sqrt(cal1 - cal2)) / 2);
-
-
+ 
+   eigen_properties.push_back(eigen_values);
    return eigen_properties; 
 }
 
