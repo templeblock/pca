@@ -24,8 +24,10 @@ int main()
     // Firstly, given the 2x2 matrix
     std::vector<std::vector<double> > data = {
 
-	    {0, 1},
-	    {2, 4},
+	{4, 6, 10}, 
+	{3, 10, 13},
+	{2, 6, 8}
+
 	
      };
 
@@ -34,17 +36,17 @@ int main()
      PCA pca(std::begin(data), std::end(data)); 
      // Return the Eigen values and Eigen vectors of the input
      // Matrix, ready to perform the PCA analysis of the data. 
-     std::vector<std::vector<double> > eigens = pca.getEigen();
+     //std::vector<std::vector<double> > eigens = pca.getEigen();
 
-     std::cout << "Eigen Values: " << std::endl;
-     std::for_each(eigens[0].begin(), eigens[0].end(), printValue); 
+     //std::cout << "Eigen Values: " << std::endl;
+    // std::for_each(eigens[0].begin(), eigens[0].end(), printValue); 
 
-     std::cout << std::endl;
+     //std::cout << std::endl;
      
-     std::cout << "Eigen Vectors" << std::endl;
-     std::for_each(eigens[1].begin(), eigens[1].end(), printValue); 
+     //std::cout << "Eigen Vectors" << std::endl;
+    // std::for_each(eigens[1].begin(), eigens[1].end(), printValue); 
 
-     std::cout << std::endl; 
+    // std::cout << std::endl; 
     
      return 0;
 

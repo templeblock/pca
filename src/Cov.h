@@ -18,11 +18,12 @@ class Cov {
 			Vector mean_product = mean(data); 
 			
 			for(auto& vect : data)
-			    sub_elements(vect, mean_product); 
+			   sub_elements(vect, mean_product); 
 	
 			// Multiplies the outer product
 			this->output = outer_product();
 		
+	
 		}
 
 		std::vector<Vector> transform(); 
