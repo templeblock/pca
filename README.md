@@ -28,6 +28,9 @@ function to calculate the Eigenvalues and Eigenvectors. For example:
         {5, 6}
    }
 ```
+The function for performing calculations on a given 2x2 matrix will be used. The library, as standard calculates the coveriance matrix, over the correlation matrix.
+
+### Requirements
 
 
 
