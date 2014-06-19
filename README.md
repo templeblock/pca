@@ -31,25 +31,8 @@ function to calculate the Eigenvalues and Eigenvectors. For example:
 The function for performing calculations on a given 2x2 matrix will be used. The library, as standard calculates the coveriance matrix, over the correlation matrix.
 
 ### Requirements
+In order to maintain the best functionality the library requires that C++11 is installed. The library has been tested
+on the following operating systems (Using GCC):
 
-
-
-### Installing Compiling examples 
-===
-
-#### To install (Linux)
-```bash
-git clone https://github.com/Phorce/pca.git
-
-cd ~/Dir/pca 
-Make
-```
-#### Running the examples 
-Included is some working examples, these have been tested on both Linux as well as the Mac operating system.
-Please note, C++11 is required in order to run the examples. These invoke standard ```std::vector``` as a given. 
-
-``` 
-g++ example/PCA.cpp -std=c++11 PCA.so
-g++ examplees/Cov.cpp -std=c++11 PCA.so
-```
-
+-> Mac (GCC-4.7.3)
+-> Ubuntu (GCC 4.7.3)
