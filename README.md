@@ -1,7 +1,20 @@
-## PCA
+## Principle Component Analaysis
 ===
+### About
+Whilst undertaking a research project, a large dataset was used and PCA analysis had to be carried out
+in order to reduce the dimensionality, as well as provide a feature based training system for one of 
+the predictive models that was developed. There were many existing software packages centered around this,
+and, all of which provided a reasonable amount of functionality. One of the main issues that the software
+packages were very complicated, both to install and access the core features - Sometimes now even allowing
+for the internal features to be used. There were also little examples which made it fustrating. 
 
-Implementation for the Principle Component Analysis, which, implemented using the proposed approach given in: (http://www.math.union.edu/~jaureguj/PCA.pdf)
+I developed this PCA library to be small and compact and tried to keep the funcionality to an absolute minimum. 
+The great advantage of this library is that developing this meant that we could implement some of the core features
+and techniques in Linear Algebra, and, because of this these functions were opened up - So it doesn't mean that you
+have to use the library for just PCA but also this library can be used for carrying out small calculations your data.
+
+The main concepts were implemented following this paper: http://www.math.union.edu/~jaureguj/PCA.pdf and if you're not familar with the concept of PCA then you should check the paper out. 
+
 
 ### Installing Compiling examples 
 ===
