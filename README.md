@@ -16,6 +16,9 @@ have to use the library for just PCA but also this library can be used for carry
 The main concepts were implemented following this paper: http://www.math.union.edu/~jaureguj/PCA.pdf and if you're not familar with the concept of PCA then you should check the paper out. 
 
 
+
+
+
 ### Installing Compiling examples 
 ===
 
