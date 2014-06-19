@@ -15,7 +15,19 @@ have to use the library for just PCA but also this library can be used for carry
 
 The main concepts were implemented following this paper: http://www.math.union.edu/~jaureguj/PCA.pdf and if you're not familar with the concept of PCA then you should check the paper out. 
 
+### Your Data
+In order to maintain the easiability to carrying out PCA on data, it was important to develop a method that automatically
+detects what the dimesionality and with this, we presented a method based on the Factory design pattern. This works so that,
+you can enter any dimensionality of data (e.g. 2x2 3x3) and the software library will choose the most appropriate 
+function to calculate the Eigenvalues and Eigenvectors. For example:
 
+```
+   std::vector<std::vector<double> data = {
+        {1, 2}.
+        {3, 4},
+        {5, 6}
+   }
+```
 
 
 
