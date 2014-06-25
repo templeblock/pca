@@ -16,8 +16,7 @@ namespace Determinant {
 			float a = data[0][0]; 
 			float b = data[1][0]; 
 			float c = data[1][1]; 
-						
-		
+
 			deter = (a + c) * (a + c) -4 * (a*c-b*b);
 		}else if(X == 3)
 		{	
@@ -31,10 +30,18 @@ namespace Determinant {
 		    float determinant3 = (data[1][0] * data[2][1]) - (data[2][0] * data[1][1]);
 
 		    deter = (data[0][0] * determinant1) - (data[0][1] * determinant2) + (data[0][2] * determinant3);
-
-		    //std::cout << deter << std::endl;	   
-			  
+		}else if(X == 4)
+		{
+		     /* 
+			Calculation for the Determinant of 4x4 matrix 
+		     */ 
+		     
 		}
+		
+			
+
+
+
 		return deter; 
 	}
 
