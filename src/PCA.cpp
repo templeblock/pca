@@ -2,17 +2,17 @@
 #include <vector>
 #include <math.h>
 #include "PCA.h"
-#include <deque> 
+#include <deque>
 #include <cassert>
-using namespace std; 
+using namespace std;
 
 PCA::PCA() {
 
-} 
+}
 std::ostream& operator <<(std::ostream&, PCA& a)
 {
-   std::cout << "("; 
-   for(std::size_t i=0; (i < a.cov_matrix.size()); i++) 
+   std::cout << "(";
+   for(std::size_t i=0; (i < a.cov_matrix.size()); i++)
    {
 	for(std::size_t j=0; (j < a.cov_matrix[i].size()); j++)
 	{
@@ -22,7 +22,7 @@ std::ostream& operator <<(std::ostream&, PCA& a)
    }
    std::cout << ")";
 
-   std::cout << std::endl; 
+   std::cout << std::endl;
 }
 std::vector<Vector> PCA::getEigen()
 {
@@ -30,13 +30,13 @@ std::vector<Vector> PCA::getEigen()
 }
 
 void PCA::Solve() {
-    this->cov_matrix = cov();
+    //this->cov_matrix = cov();
 
-   this->values = Eigen::solveEigen(this->cov());
+   //this->values = Eigen::solveEigen(this->cov());
 
 
 }
 std::vector<Vector> PCA::cov() {
 
    return c.transform();
-} 
+}
