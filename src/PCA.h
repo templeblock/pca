@@ -15,16 +15,16 @@ class PCA {
 	   PCA(T begin, T end)
 	   : data(begin, end)
 	   {
-					c = Cov(begin, end);
+				c = Cov(begin, end);
 
-					Solve();
+				Solve();
 	   }
 
 	   std::vector<Vector> cov();
 
 	   std::vector<Vector> getEigen();
 
-	   std::vector<Vector>
+	   std::vector<Vector> cov();
 
 	   void Solve();
 
