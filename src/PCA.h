@@ -2,42 +2,37 @@
 #include <vector>
 #include "Cov.h"
 #include "Eigen.h"
-typedef std::vector<double> Vector; 
+typedef std::vector<double> Vector;
 
 
 class PCA {
 
-	public: 
+	public:
 
-	   PCA(); 
+	   PCA();
 
 	   template<typename T>
-	   PCA(T begin, T end) 
+	   PCA(T begin, T end)
 	   : data(begin, end)
 	   {
-		c = Cov(begin, end); 
+					c = Cov(begin, end);
 
-		Solve();
+					Solve();
 	   }
 
-	   std::vector<Vector> cov(); 
-		
-	   std::vector<Vector> getEigen(); 
-	   
+	   std::vector<Vector> cov();
+
+	   std::vector<Vector> getEigen();
+
 	   std::vector<Vector>
 
 	   void Solve();
 
-	   friend std::ostream& operator <<(std::ostream&, PCA& a); 
+	   friend std::ostream& operator <<(std::ostream&, PCA& a);
 	private:
 	  Cov c;
-	  std::vector<Vector> cov_matrix; 
-	  std::vector<Vector> data; 
-	  std::vector<Vector> values; 
+	  std::vector<Vector> cov_matrix;
+	  std::vector<Vector> data;
+	  std::vector<Vector> values;
 
-}; 
-
-
-
-
-
+};
