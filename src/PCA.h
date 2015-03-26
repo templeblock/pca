@@ -24,10 +24,10 @@ class PCA {
 
 	   std::vector<Vector> getEigen();
 
-
+	
 	   void Solve();
 
-	   	friend std::ostream& operator <<(std::ostream&, PCA& a);
+	   friend std::ostream& operator <<(std::ostream&, PCA& a);
 	private:
 	  Cov c;
 	  std::vector<Vector> cov_matrix;
