@@ -24,8 +24,6 @@ class PCA {
 
 	   std::vector<Vector> getEigen();
 
-	   std::vector<Vector> cov();
-
 	   void Solve();
 
 	   friend std::ostream& operator <<(std::ostream&, PCA& a);
