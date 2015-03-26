@@ -29,7 +29,6 @@ std::vector<Vector> PCA::getEigen()
    return this->values;
 }
 
-/*
 void PCA::Solve() {
     //this->cov_matrix = cov();
 
@@ -37,8 +36,10 @@ void PCA::Solve() {
 
 
 }
-*/
+
+/*
 std::vector<Vector> PCA::cov() {
 
    return c.transform();
 }
+*/
