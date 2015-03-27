@@ -38,4 +38,4 @@ on the following operating systems (Using GCC):
 -> Ubuntu (GCC 4.7.3)
 
 
-## Old version -- New version
+## Old version 
